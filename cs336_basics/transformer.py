@@ -14,7 +14,7 @@ class Linear(torch.nn.Module):
         self.weight = torch.nn.Parameter(weight)
 
     def forward(self, x: Float[torch.Tensor, "*prefix in_features"]) -> Float[torch.Tensor, "*prefix out_features"]:
-        return einx.dot("... in_features, out_features in_features -> out_features", x, self.weight)
+        return einx.dot("... in_features, out_features in_features -> ... out_features", x, self.weight)
 
 
 class Embedding(torch.nn.Module):
