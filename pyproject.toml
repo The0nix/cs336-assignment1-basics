@@ -21,6 +21,16 @@ dependencies = [
 ]
 
 
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "ipython>=9.3.0",
+    "matplotlib>=3.10.3",
+    "torchlens>=0.1.35",
+    "types-regex>=2024.11.6.20250403",
+    "types-tqdm>=4.67.0.20250516",
+]
+
 
 [tool.setuptools.packages.find]
 include = ["cs336_basics"]
@@ -48,3 +58,16 @@ extend-select = ["UP"]
 ignore = [
     "F722"
 ]
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
